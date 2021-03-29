@@ -3,10 +3,10 @@
 % -*- coding: UTF-8; -*-
 % vim: set fenc=utf-8
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% cv.tex
-%% <https://github.com/aliyazdi75/Resume>
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% cv.tex                                 %%
+%% <https://github.com/aliyazdi75/Resume> %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[letterpaper,MMMyyyy,nonstopmode]{resume}
 
@@ -17,9 +17,9 @@
 \usepackage{enumitem}
 \usepackage{fontawesome5}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PREAMBLE.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+%% PREAMBLE %%
+%%%%%%%%%%%%%%
 
 % Multi Cols no justify.
 \AtBeginEnvironment{multicols}{\RaggedRight}
@@ -60,15 +60,15 @@ urlcolor=teal
 \Cnodeput[radius=2.3ex](0,0){P}{#1}
 \end{postscript}}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ACTUAL DOCUMENT.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT %%
+%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-%%%%%%%%%%%%%%%
-% TITLE BLOCK %
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%% TITLE BLOCK %%
+%%%%%%%%%%%%%%%%%
 
 \Title{\CVAuthor}
 
@@ -124,9 +124,9 @@ Dept. Computer Engineering Amirkabir University, Hafez Ave., Tehran, Iran
 
 \begin{Body}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
 %% ABOUT ME %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
 
 
 \Section
@@ -136,12 +136,12 @@ Dept. Computer Engineering Amirkabir University, Hafez Ave., Tehran, Iran
 
 I have been working as a Flutter developer and mobile team leader for two years.
 A Software Engineering graduate who interests in using Artificial Intelligence and Software Engineering in my work experiences.
-An open-source advocate who helps developers to solve their problems by sharing useful projects on Github.
+An open-source developer who helps developers to solve their problems by sharing useful projects on Github.
 I am looking for a better opportunity and willing to relocate anywhere.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 %% WORK EXPERIENCE %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 
 \Section
 {Work\newline
@@ -252,9 +252,9 @@ Year: 2020
 \BulletItem
 Diploma in Mathematics and Physics, {\small{\textsl{GPA: 19.31 / 20.00}}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 %% Honors & Awards %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 
 \Section
 {Honors \&\newline
@@ -306,9 +306,9 @@ among more than 70K participants
 In the Iranian Physics Olympiad and Mathematical Olympiad.
 \end{Detail}
 
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 %% TECHNICAL SKILLS %%
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
 \Section
 {Technical Skills}
@@ -413,6 +413,19 @@ Other
 {\textit{Flutter Community}},
 \DatestampYM{2021}{01}
 
+\BigGap
+\NumberedItem{[4]}
+\href{https://medium.com/@aliyazdi75}
+{\underline{A. Yazdi}},
+\href{https://medium.com/flutter-community/lets-make-the-flutter-navigator-2-bc5953251c3e}
+{
+``Let’s make the Flutter Navigator 2''
+},
+\newline Designing and Implementing Navigator 2 for the web applications support Imperative and Declarative Navigation,
+\href{https://medium.com/flutter-community}
+{\textit{Flutter Community}},
+\DatestampYM{2021}{04}
+
 \endgroup
 
 % \SubSection
@@ -426,9 +439,9 @@ Other
 % {Conferences}
 % {PDF:Conferences}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PROFESSIONAL PROJECTS %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \Section
 {Professional\newline
@@ -476,9 +489,26 @@ Flutter application service using Google Map to show recommendation spots.
 {\faGithub}
 }}
 \Item
-Designing and Building a micro-service architecture responsive Flutter gallery application uses in any platform.
-This application supports \textbf{null-safety}, \textbf{multi-languages}, \textbf{new navigation}, \textbf{multi-themes}, and \textbf{multi-devices adaptive size}. And the \textbf{micro-service architecture} is explained on \textbf{Medium}.
+A responsive Flutter gallery application for any platform using the micro-service architecture.
 The web application is hosting on the \textbf{Amirkabir University} website for Alumni students.
+\SubBulletItem
+Features: Sound Null-Safety, Navigator 2, Two External API providers (Server, Github),
+Unique HEX URL generator for github content API, Keyboard Shortcut, Localization, Multi-Themes, Multi-Devices Adaptive Size.
+
+\BigGap
+\BulletItem
+\textbf{The Flutter Chat Application},
+\textit{\small{Flutter, SignalR, WebRTC}}
+\hfill
+{\normalsize{
+\href{https://github.com/aliyazdi75/flutter_chat}
+{\faGithub}
+}}
+\Item
+A full-featured (simple message, voice, video) flutter chat application by SignalR and WebRTC.
+\SubBulletItem
+Features: Full Authentication service, Chat list and Chat page, Full webRTC handshaking through SignalR (Offer, Answer, Candidate, HangUp, Reject),
+Camera and microphone functionality (e.g. switching camera, toggling camera and microphone and torch)
 
 \BigGap
 \BulletItem
@@ -499,7 +529,7 @@ The web application is hosting on the \textbf{Amirkabir University} website for 
 {\faGithub}
 }}
 \Item
-Designing and Building a responsive Flutter gallery application for any platform.
+Designing and Building a responsive Flutter portfolio application for any platform.
 
 \BigGap
 \BulletItem
@@ -516,21 +546,27 @@ Designing and Building a responsive Flutter gallery application for any platform
 \Item
 Designing and Building a Flutter Plugin helps developers show their media notification and control streaming media beyond the Flutter application.
 
-\BigGap
-\BulletItem
-\textbf{The Flutter Chat Application},
-\textit{\small{Flutter, SignalR, WebRTC}}
-\hfill
-{\normalsize{
-\href{https://github.com/aliyazdi75/flutter_chat}
-{\faGithub}
-}}
-\Item
-Designing and Implementing a full-featured (simple message, multimedia message, voice, video) flutter chat application by SignalR and WebRTC.
+%%%%%%%%%%%%%%%%%%%
+%% CONTRIBUTIONS %%
+%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section
+{Contributions}
+{Contributions}
+{PDF:Contributions}
+
+\BulletItem
+\href{https://github.com/flutter/flutter/issues?q=author%3Aaliyazdi75}
+{\textbf{flutter/flutter}}
+
+\BulletItem
+% \href{https://github.com/flutter/plugins/pulls?q=author%3Aaliyazdi75}
+\href{https://github.com/aliyazdi75/plugins/tree/feature_track_selection}
+{\textbf{flutter/plugins}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% CERTIFICATIONS AND LICENSES %%
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \Section
 {Certifications \newline\&
@@ -552,16 +588,15 @@ and offered through
 {\textit{Coursera}},
 \DatestampYM{2021}{02}
 
-
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
 %% PAGE BREAK %%
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
 
 \newpage
 
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
 %% Academic Projects %%
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
 
 \Section
 {Academic Projects}
@@ -712,9 +747,9 @@ Prof.~Mohammad~Rahmati
 Focus: Artificial Intelligence, Software Engineering, Data Analytics
 \end{Detail}
 
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
 %% RESEARCH INTERESTS %%
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
 
 \Section
 {Research Interests}
@@ -786,9 +821,9 @@ Dept. Computer Engineering Amirkabir University, Hafez Ave., Tehran, Iran
 % \,\SubBulletSymbol\,
 % +98\,(21)\,645-42741
 
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
 %% HOBBIES %%
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
 
 \Section
 {HOBBIES}
@@ -810,9 +845,9 @@ Playing Football \& Volleyball
 \BulletItem
 Playing Chess \& Video Games
 
-%%%%%%%%%%%
-% CV NOTE %
-%%%%%%%%%%%
+%%%%%%%%%%%%%
+%% CV NOTE %%
+%%%%%%%%%%%%%
 
 {\UseNoteFont
 \hfill
