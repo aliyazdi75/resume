@@ -8,30 +8,19 @@
 %% <https://github.com/aliyazdi75/Resume> %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[letterpaper,MMMyyyy,nonstopmode]{resume}
+\input{resume.tex}
 
-\usepackage{xcolor}
-\usepackage{multicol}
-\usepackage{slantsc}
-\usepackage{ragged2e}
-\usepackage{enumitem}
-\usepackage{fontawesome5}
-
-%% Use ctrl+alt+j (cmd+option+j on Mac) to refrence on pdf %%
-%%%%%%%%%%%%%%
-%% PREAMBLE %%
-%%%%%%%%%%%%%%
-
-% Multi Cols no justify.
-\AtBeginEnvironment{multicols}{\RaggedRight}
+%%%%%%%%%%%%%%%
+%% VARIABLES %%
+%%%%%%%%%%%%%%%
 
 % CV Info.
 \newcommand{\CVAuthor}{Ali Yazdi}
 \newcommand{\CVTitle}{Ali Yazdi's Resume}
-\newcommand{\TitleDesciption}{Senior Flutter Developer, Community Organizer}
+\newcommand{\TitleDesciption}{Senior Software Engineer, Community Organizer}
 \newcommand{\CVNote}{Last Update on \today}
-\newcommand{\CVWebpageName}{yazdi.ca}
-\newcommand{\CVWebpage}{https://yazdi.ca}
+\newcommand{\CVWebpageName}{yazdi.dev}
+\newcommand{\CVWebpage}{https://yazdi.dev}
 \newcommand{\MainEmailName}{ma.yazdi75@gmail.com}
 \newcommand{\MainEmail}{mailto:ma.yazdi75@gmail.com}
 \newcommand{\SecondoryEmailName}{a.yazdi@gdgmontreal.com}
@@ -49,27 +38,23 @@ pdfsubject={\CVWebpage},
 pdfcreator={aliyazdi75},
 pdfproducer={aliyazdi75},
 pdfkeywords={\PDFKeywords},
-unicode=true,
-bookmarks=true,
-bookmarksopen=true,
-pdfstartview=FitH,
-pdfpagelayout=OneColumn,
-pdfpagemode=UseOutlines,
-hidelinks,
-breaklinks,
-colorlinks, 
-urlcolor=teal,
-linkcolor=teal
 }
 
-% Shorthand.
-\newcommand{\Code}[1]{\mbox{\textbf{#1}}}
-\newcommand{\CodeCommand}[1]{\mbox{\textbf{\textbackslash{#1}}}}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-\newcommand\pscircled[1]{%
-\raisebox{-0.315\height}{\begin{postscript}
-\Cnodeput[radius=2.3ex](0,0){P}{#1}
-\end{postscript}}}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %%%%%%%%%%%%%%%%%%%%%
 %% ACTUAL DOCUMENT %%
@@ -81,863 +66,190 @@ linkcolor=teal
 %% TITLE BLOCK %%
 %%%%%%%%%%%%%%%%%
 
-\Title{\CVAuthor}
-
-\begin{SubTitle}
-    \normalsize{
-        \href{https://linkedin.com/in/aliyazdi75}
-        {\faLinkedin}
-        \,\textbullet\,
-        \href{https://github.com/aliyazdi75}
-        {\faGithub}
-        \,\textbullet\,
-        \href{https://aliyazdi75.medium.com}
-        {\faMedium}
-        \,\textbullet\,
-        \href{mailto:ma.yazdi75@gmail.com}
-        {\faEnvelope}
-        \,\textbullet\,
-        \href{\Phone}
-        {\faPhone}
-        \,\textbullet\,
-        \href{\CVWebpage}
-        {\faGlobe}
-    }
-    \par
-    {\TitleDesciption}
-    \par
-    \href{\MainEmail}
-    {\MainEmailName}
-    \,\SubBulletSymbol\,
-    \href{\SecondoryEmail}
-    {\SecondoryEmailName}
-    \,\SubBulletSymbol\,
-    \href{\Phone}
-    {\PhoneName}
-    \,\SubBulletSymbol\,
-    \href{\CVWebpage}
-    {\CVWebpageName}
-\end{SubTitle}
-
-\smallskip\hrule
-
-\begin{Body}
-
-    %%%%%%%%%%%%%%
-    %% ABOUT ME %%
-    %%%%%%%%%%%%%%
-
-
-    \Section
-    {About Me}
-    {About Me}
-    {PDF:AboutMe}
-    Experienced Flutter developer with a proven track record of delivering robust and scalable mobile applications. Committed to developing efficient and user-friendly solutions that consistently meet the highest quality standards. Passionate about continuous learning and staying updated with the latest industry trends, I actively leverage artificial intelligence and apply software engineering best practices to drive innovation and deliver exceptional results.
-
-    %%%%%%%%%%%%%%%%%%%%%
-    %% WORK EXPERIENCE %%
-    %%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Work\newline
-        Experience}
-    {Work Experience}
-    {PDF:WorkExperience}
-
-    \Entry
-    \href{https://woopen.com}
-    {\textbf{Woopen}},
-    {\small{Montréal, Canada\,\SubBulletSymbol\,Full-time}}
-    \hfill
-    \textsl{\small{\DatestampYM{2021}{08}\,--\,Present}}
-    \Gap
-    Senior Flutter Developer
-    \normalsize{
-        \SubBulletSymbol\,
-        \href{https://play.google.com/store/apps/details?id=com.woopen.app}
-        {\faGooglePlay}
-        \SubBulletSymbol\,
-        \href{https://apps.apple.com/app/woopen-immobilier-habitat/id1543053660}
-        {\faAppStoreIos}}
-    \BulletItem
-    Woopen is a market network for all professionals, clients, stakeholders, and enthusiasts in the world of real estate and housing.
-    \begin{Detail}
-        \SubBulletItem
-        Played a key role in the mobile project, taking ownership of the Flutter development and driving its success.
-        \SubBulletItem
-        Upgraded the application's Flutter version, implemented new features like null-safety and new localization, and refactored to a standard project code style with the help of analysis options.
-        \SubBulletItem
-        Improved the application's structure, tests, and stability based on fixing Sentry issues, migrating to null-safety, reducing asset files, using icon fonts, and setting up the application for deferred components. Successfully reduced bugs by 70\% through the implementation of structured testing and bug fixing strategies, improved application performance by dropping useless frame rendering, achieved 20ms less rendering time in profile mode, and drastically decreased application size by 89MB.
-        \SubBulletItem
-        Implemented automation between development tools, including Github actions, Sentry, Jira, Slack, and Lokalise, to streamline workflows and enhance collaboration.
-        \SubBulletItem
-        Collaborated with an external software organization in an agile team, working on the development of new features as requested by the business side.
-    \end{Detail}
-
-    \BigGap
-    \Entry
-    \href{https://en.iranian.ac.ir/}
-    {\textbf{Iranian University}},
-    {\small{Tehran, Iran\,\SubBulletSymbol\,Full-time}}
-    \hfill
-    \textsl{\small{\DatestampYM{2020}{04}\,--\,\DatestampYM{2021}{08}}}
-    \Gap
-    Software Engineer
-    \BulletItem
-    The Iranian University is the first e-institute of higher education in Iran.
-    \begin{Detail}
-        \SubBulletItem
-        Implemented agile methodologies to optimize student registration and exam season productivity, resulting in improved efficiency.
-        \SubBulletItem
-        Developed robust APIs for the E-Learning Management System (\href{https://ems.iranian.ac.ir/?lang=en}{EMS}), facilitating seamless management of student and professor data for unit registration, grades, and payments.
-        \SubBulletItem
-        Optimized database performance and implemented caching strategies to significantly enhance the server response time of the EMS platform.
-    \end{Detail}
-
-    \BigGap
-    \Entry
-    \href{https://matemachine.com}
-    {\textbf{Mate Machine}},
-    {\small{Remote\,\SubBulletSymbol\,Part-time project}}
-    \hfill
-    \textsl{\small{\DatestampYM{2020}{07}\,--\,\DatestampYM{2021}{06}}}
-    \Gap
-    Freelance Flutter Developer
-    \BulletItem
-    Mate Machine is a dating social media startup company.
-    \begin{Detail}
-        \SubBulletItem
-        Transformed the app architecture to leverage Flutter's best practices, ensuring scalability and maintainability.
-        \SubBulletItem
-        Implemented a robust SignalR socket client to facilitate real-time social media chat, enhancing user engagement.
-        \SubBulletItem
-        Leveraged Firebase services, including Cloud Messaging, Analytics, and Crashlytics, to enhance app functionality and monitor performance.
-        \SubBulletItem
-        Developed and integrated a seamless peer-to-peer (P2P) WebRTC video chatting feature, enabling users to connect effortlessly.
-    \end{Detail}
-
-    \BigGap
-    \Entry
-    \href{https://tarafdari.com}
-    {\textbf{Tarafdari}},
-    {\small{Tehran, Iran\,\SubBulletSymbol\,Full-time}}
-    \hfill
-    \textsl{\small{\DatestampYM{2019}{01}\,--\,\DatestampYM{2020}{04}}}
-    \Gap
-    Mobile Application Developer
-    \normalsize{
-        \SubBulletSymbol\,
-        \href{https://play.google.com/store/apps/details?id=com.tarafdari.news}
-        {\faGooglePlay}}
-    \BulletItem
-    Tarafdari is the first and most popular sports social media network with millions of users in Iran, providing official news and live scores
-    of national and international matches.
-    \begin{Detail}
-        \SubBulletItem
-        Developed and maintained mobile applications for a popular sports media platform using Flutter framework.
-        \SubBulletItem
-        Implemented key features such as live score updates, news feeds, and user profile management.
-        \SubBulletItem
-        Collaborated with a cross-functional team to ensure seamless integration with backend services and APIs.
-        \SubBulletItem
-        Developed and maintained a custom notification package, enhancing the user experience and increasing engagement.
-        \SubBulletItem
-        Designed and implemented a TV sport streaming feature with live chat functionality using SocketIO, allowing users to interact in real-time while watching sports events.
-        \SubBulletItem
-        Conducted thorough testing and debugging to deliver high-quality, bug-free applications by using Firebase crashlytics.
-        \SubBulletItem
-        Contributed to achieving thousands of downloads for the mobile application through effective development and optimization strategies.
-    \end{Detail}
-
-    %%%%%%%%%%%%%%%%%%
-    %% PAGE BREAK   %%
-    %%%%%%%%%%%%%%%%%%
-
-    \newpage
-
-    %%%%%%%%%%%%%%%
-    %% EDUCATION %%
-    %%%%%%%%%%%%%%%
-
-    \Section
-    {Education}
-    {Education}
-    {PDF:Education}
-
-    \Entry
-    \href{https://aut.ac.ir/en}
-    {\textbf{Amirkabir University of Technology}},
-    {\small{(Tehran Polytechnic), Tehran, Iran}}
-    \hfill
-    \textsl{\small{\DatestampYM{2015}{09}\,--\,\DatestampYM{2020}{09}}}
-
-    \Gap
-    \BulletItem
-    Bachelor of Engineering (BSc.) in
-    \href{https://ce.aut.ac.ir/en}
-    {Computer Engineering, Software},
-    \href{https://ur.isc.ac/#Technology?input_culture=en}
-    {Ranked 1st}
-    in Iran.
-    \begin{Detail}
-        \SubBulletItem
-        Thesis:
-        Designing and Implementing a Location-Based Social Network
-        Recommendation System
-        \SubBulletItem
-        Adviser: Prof.~Mohammad~Rahmati,
-        Record\,No.: 44430,
-        Thesis\,No.: B9\,1668,
-        Year: 2020
-    \end{Detail}
-
-    \BigGap
-    \Entry
-    \href{http://adab.sch.ir/HSchool}
-    {\textbf{Adab High School}},
-    {\small{Tehran, Iran}}
-    \hfill
-    \textsl{\small{\DatestampYM{2011}{09}\,--\,\DatestampYM{2014}{06}}}
-    \Gap
-    \BulletItem
-    Diploma in Mathematics and Physics, {\small{\textsl{GPA: 19.31 / 20.00}}}
-
-    %%%%%%%%%%%%%%%%%%%%%%
-    %% TECHNICAL SKILLS %%
-    %%%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Technical Skills}
-    {Technical Skills}
-    {PDF:TechnicalSkills}
-
-    % \begin{multicols}{2}
-    % \begin{itemize}[leftmargin=*]
-    \BulletItem
-    Programming Languages
-    \begin{Detail}
-        \Item
-        Dart, Python, Java, C/C++, PHP, Assembly
-    \end{Detail}
-
-    \Gap
-    \BulletItem
-    Mobile \& Web Development
-    \begin{Detail}
-        \Item
-        Flutter, Django, Django Rest Framework, Android
-    \end{Detail}
-
-    % \columnbreak
-
-    \Gap
-    \BulletItem
-    Database \& Operating Systems
-    \begin{Detail}
-        \Item
-        Linux (Ubuntu), PostgreSQL, MySQL
-    \end{Detail}
-
-    \Gap
-    \BulletItem
-    Tools \& Technologies
-    \begin{Detail}
-        \Item
-        CI/CD, Docker, Git, \LaTeX, WebRTC, Scikit-learn, Pandas, Bash Scripting
-    \end{Detail}
-
-    \Gap
-    \BulletItem
-    Other
-    \begin{Detail}
-        \Item
-        Software Systems Engineering, Cross-Platform Application Development
-    \end{Detail}
-
-    % \end{itemize}
-    % \end{multicols}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%
-    %% VOLUNTEER EXPERIENCE %%
-    %%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Volunteer Experience}
-    {Volunteer Experience}
-    {PDF:Volunteer Experience}
-
-    \BulletItem
-    \href{https://gdg.community.dev/gdg-montreal}
-    {\textbf{Google Developer Group Montreal}},
-    {\small{Montreal, Canada}}
-    \hfill
-    \textsl{\small\DatestampYM{2023}{03}\,--\,Present}
-    \Item
-    As an organizer and speaker for in-person Flutter events in Montreal, I collaborate with a team to plan and execute meetups, workshops, and conferences. I deliver presentations on Flutter-related topics, share my expertise, and engage with the community to foster knowledge exchange and networking opportunities.
-
-    \BigGap
-    \BulletItem
-    \href{https://persianflutter.com}
-    {\textbf{Persian Flutter Community}},
-    {\small{Tehran, Iran}}
-    \hfill
-    \textsl{\small\DatestampYM{2021}{04}\,--\,Present}
-    \Item
-    As a community organizer and speaker for the Persian Flutter Community, I play an active role in coordinating virtual events, webinars, and online discussions. I contribute to the growth of the community by sharing insights, providing guidance to members, and delivering presentations on Flutter development best practices and emerging trends.
-
-    %%%%%%%%%%%%%%%%%%%%%
-    %% Honors & Awards %%
-    %%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Honors \&\newline
-        Awards}
-    {Honors \& Awards}
-    {PDF:HonorsAndAwards}
-
-    \BulletItem
-    Most installed sport application in Iran for Tarafdari application
-    \hfill
-    \textsl{\small{\DatestampYM{2020}{05}}}
-    \begin{Detail}
-        \Item
-        Achieved more than 200k active users on the Google Play Store for Tarafdari application after migrating to Flutter.
-    \end{Detail}
-
-    \Gap
-    \BulletItem
-    First Place in the 12th Iran Web and Mobile Festival
-    (\href{https://iwmf.ir}
-    {\small{IWMF}})
-    \hfill
-    \textsl{\small{\DatestampYM{2020}{02}}}
-    \begin{Detail}
-        \Item
-        Awarded for creating the Best Sport Mobile Application among 7k applications.
-    \end{Detail}
-
-    \Gap
-    \BulletItem
-    Ranked in top 0.2\% among more than 180K participants
-    \hfill
-    \textsl{\small{\DatestampYM{2015}{07}}}
-    \begin{Detail}
-        \Item
-        Achieved a high ranking in the Nation-Wide University Entrance Exam among all National Students of Physics and Mathematics.
-    \end{Detail}
-
-    \Gap
-    \BulletItem
-    Qualified for the Second Round of Olympiad
-    among more than 70K participants
-    \hfill
-    \textsl{\small{\DatestampYM{2013}{07}}}
-    \begin{Detail}
-        \Item
-        Successfully qualified for the Iranian Physics and Mathematical Olympiad.
-    \end{Detail}
-
-    %%%%%%%%%%%%%%%%%%
-    %% PUBLICATIONS %%
-    %%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Publications}
-    {Publications}
-    {PDF:Publications}
-
-    \SubSection
-    {Medium}
-    {Medium}
-    {PDF:Medium}
-
-    % Declare a new group to limit the scope of \MaxNumberedItem to this subsection.
-    \begingroup
-    \renewcommand{\MaxNumberedItem}{[88]}
-
-    \BigGap
-    \NumberedItem{[1]}
-    \href{https://aliyazdi75.medium.com}
-    {\underline{A. Yazdi}},
-    \href{https://medium.com/flutter-community/lets-make-the-flutter-navigator-2-bc5953251c3e?source=friends_link&sk=e1ff30235ab93276b558c5b5ef1dd15f}
-    {
-        ``Let’s make the Flutter Navigator 2''
-    },
-    \newline Designing and Implementing Navigator 2 for the web applications support Imperative and Declarative Navigation,
-    \href{https://medium.com/flutter-community}
-    {\textit{Flutter Community}},
-    \DatestampYM{2021}{04}
-
-    \BigGap
-    \NumberedItem{[2]}
-    \href{https://aliyazdi75.medium.com}
-    {\underline{A. Yazdi}},
-    \href{https://medium.com/flutter-community/the-software-engineering-approach-in-cross-platform-programming-with-flutter-part-1-efcdc8a8fc26?source=friends_link&sk=ceb60f56685ce66c7f9574595748f25b}
-    {
-        ``Using Software Engineering methods to design and build a fully responsive and adaptive mobile, desktop, and web application''
-    },
-    \newline The first part of the Software Engineering approach in Cross-Platform Programming with Flutter,
-    \href{https://medium.com/flutter-community}
-    {\textit{Flutter Community}},
-    \DatestampYM{2021}{03}
-
-    \BigGap
-    \NumberedItem{[3]}
-    \href{https://aliyazdi75.medium.com}
-    {\underline{A. Yazdi}},
-    \href{https://medium.com/flutter-community/the-software-engineering-approach-in-cross-platform-programming-with-flutter-part-2-f7b75056102?source=friends_link&sk=79ed6a47bd6fe9b4247f3cc2a113e3df}
-    {
-        ``Designing and building the Flutter application structure using the Bloc pattern in the micro-service architecture''
-    },
-    \newline The second part of the Software Engineering approach in Cross-Platform Programming with Flutter,
-    \href{https://medium.com/flutter-community}
-    {\textit{Flutter Community}},
-    \DatestampYM{2021}{02}
-
-    \BigGap
-    \NumberedItem{[4]}
-    \href{https://aliyazdi75.medium.com}
-    {\underline{A. Yazdi}},
-    \href{https://medium.com/flutter-community/the-software-engineering-approach-in-cross-platform-programming-with-flutter-part-3-34c6eff02af0?source=friends_link&sk=a34a4a71f306e81b868fd6865abb6aaa}
-    {
-        ``Designing and developing the Flutter application data models and backend using the Build value and Bloc pattern''
-    },
-    \newline The third part of the Software Engineering approach in Cross-Platform Programming with Flutter,
-    \href{https://medium.com/flutter-community}
-    {\textit{Flutter Community}},
-    \DatestampYM{2021}{01}
-
-    \endgroup
-
-    % \BigGap
-    % \SubSection
-    % {Conferences}
-    % {Conferences}
-    % {PDF:Conferences}
-
-    %%%%%%%%%%%%%%%%
-    %% PAGE BREAK %%
-    %%%%%%%%%%%%%%%%
-
-    \newpage
-
-    %%%%%%%%%%%%%%%
-    %% LANGUAGES %%
-    %%%%%%%%%%%%%%%
-
-    \Section
-    {Languages}
-    {Languages}
-    {PDF:Languages}
-
-    \BulletItem
-    English: Full professional proficiency
-
-    \BulletItem
-    French: Limited working proficiency (Intermediate level from Quebec Government)
-
-    \Gap
-    \BulletItem
-    Persian: Native proficiency
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %% CERTIFICATIONS AND LICENSES %%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Certifications \newline\&
-        Licenses}
-    {Certifications \& Licenses}
-    {PDF:TeachingAndLicenses}
-
-    \BulletItem
-    \href{https://coursera.org/share/81c743eeff5bf3e85dfc118ab47b9407}
-    {Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning},
-    \Item
-    This certification course provided an in-depth understanding of Machine Learning and Deep Learning, including their applications in computer vision. Explored topics such as convolutional neural networks to enhance vision.
-    Authorized by
-    \href{https://deeplearning.ai}
-    {\textit{DeepLearning.AI}}
-    and offered through
-    \href{https://coursera.org/}
-    {\textit{Coursera}},
-    \DatestampYM{2021}{02}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %% PROFESSIONAL PROJECTS %%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Professional\newline
-        Projects}
-    {Professional Projects}
-    {PDF:ProfessionalProjects}
-
-    \BulletItem
-    \textbf{The Location-Based Recommendation System},
-    \textit{\small{Django, Rest Framework, Scikit-learn, Flutter}}
-    \hfill
-    {\normalsize{
-            \href{https://github.com/aliyazdi75/Resume/raw/main/BScThesis-Abstract.pdf}
-            {\faFilePdf}
-        }}
-    \Item
-    Developed a micro­service recommendation system that combines content-based and collaborative recommendation algorithms based on user location-based social media networks like Foursquare and Google Maps.
-    \SubBulletItem
-    Utilized \href{https://django-rest-framework.org}{Django Rest Framework} as an API service to connect the application with the server.
-    \SubBulletItem
-    Integrated \href{https://developer.foursquare.com}{Foursquare API} for scraping user location-based activities and \href{https://osm-internal.download.geofabrik.de}{Open Street Map} for accessing location datasets. Implemented a recommendation service for suggesting locations.
-    \SubBulletItem
-    Developed a Flutter application using Google Maps for the user interface.
-
-    \BigGap
-    \BulletItem
-    \textbf{The Flutter Gallery Application},
-    \textit{\small{Flutter}}
-    \hfill
-    {\normalsize{
-            \href{https://medium.com/flutter-community/the-software-engineering-approach-in-cross-platform-programming-with-flutter-part-1-efcdc8a8fc26?source=friends_link&sk=ceb60f56685ce66c7f9574595748f25b}
-            {\faMedium}
-            \,\SubBulletSymbol\,
-            \href{https://github.com/aliyazdi75/gallery/releases}
-            {\faAndroid}
-            \,\SubBulletSymbol\,
-            \href{\CVWebpage/gallery/}
-            {\faGlobe}
-            \,\SubBulletSymbol\,
-            \href{https://github.com/aliyazdi75/gallery}
-            {\faGithub}
-        }}
-    \Item
-    Developed a responsive Flutter gallery application for multiple platforms using a micro-service architecture. The web application is hosted on the \href{https://94.ceit.aut.ac.ir/gallery/}{Amirkabir University Website} for Alumni students.
-    \SubBulletItem
-    Integrated two external API providers: the University server and the Github \href{https://github.com/aliyazdi75/gallery-assets}{Repository} contents (Flutter event images).
-    \SubBulletItem
-    Implemented a new Flutter Navigator system and supported all navigation scenarios.
-
-    \BigGap
-    \BulletItem
-    \textbf{The Flutter Chat Application},
-    \textit{\small{Flutter, SignalR, WebRTC}}
-    \hfill
-    {\normalsize{
-            \href{https://github.com/aliyazdi75/flutter_chat}
-            {\faGithub}
-        }}
-    \Item
-    Developed a full-featured Flutter chat application using SignalR and WebRTC, allowing simple text, voice, and video communication.
-    \SubBulletItem
-    Implemented text and video chat functionality.
-    \SubBulletItem
-    Established full WebRTC handshaking through SignalR, enabling offer, answer, candidate, hangup, and reject actions.
-    \SubBulletItem
-    Included video chat features such as switching cameras, toggling camera and microphone, and controlling the torch.
-
-    \BigGap
-    \BulletItem
-    \textbf{The Flutter Portfolio Application},
-    \textit{\small{Flutter}}
-    \hfill
-    {\normalsize{
-            \href{https://snapcraft.io/aliyazdi}
-            {\faLinux}
-            \,\SubBulletSymbol\,
-            \href{https://github.com/aliyazdi75/aliyazdi75.github.io/releases}
-            {\faAndroid}
-            \,\SubBulletSymbol\,
-            \href{\CVWebpage}
-            {\faGlobe}
-            \,\SubBulletSymbol\,
-            \href{https://github.com/aliyazdi75/aliyazdi75.github.io}
-            {\faGithub}
-        }}
-    \Item
-    Designed and built a responsive Flutter portfolio application that can be used on any platform.
-
-    \BigGap
-    \BulletItem
-    \textbf{The Flutter Media Notification Plugin},
-    \textit{\small{Java, Flutter}}
-    \hfill
-    {\normalsize{
-            \href{https://pub.dev/packages/flutter_media_notification}
-            {\faGlobe}
-            \,\SubBulletSymbol\,
-            \href{https://github.com/aliyazdi75/flutter_media_notification}
-            {\faGithub}
-        }}
-    \Item
-    Developed a Flutter plugin that allows developers to display media notifications and control streaming media beyond the scope of the Flutter application.
-
-    %%%%%%%%%%%%%%%%%%%
-    %% CONTRIBUTIONS %%
-    %%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Contributions}
-    {Contributions}
-    {PDF:Contributions}
-
-    \BulletItem
-    Contributed to open-source projects by actively participating in the development process. This includes reporting issues, fixing bugs, and adding new features to the following repositories:
-
-    \Gap
-    \SubBulletItem
-    \href{https://github.com/flutter/flutter/issues?q=author%3Aaliyazdi75}
-    {\textbf{flutter/flutter}}
-
-    \SubBulletItem
-    \href{https://github.com/flutter/plugins/pulls?q=author%3Aaliyazdi75}
-    {\textbf{flutter/plugins}}
-
-    \SubBulletItem
-    \href{https://github.com/flutter/website/pulls?q=author%3Aaliyazdi75}
-    {\textbf{flutter/website}}
-
-    %%%%%%%%%%%%%%%%%%%%%%%
-    %% Academic Projects %%
-    %%%%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Academic Projects}
-    {Academic Projects}
-    {PDF:AcademicProjects}
-
-    % \begin{multicols}{2}
-    % \begin{itemize}[leftmargin=*]
-
-    \BulletItem
-    \textbf{NUMEX Interpreter},
-    \textit{\small{Racket}}
-    \hfill
-    {\normalsize{
-            \href{https://github.com/aliyazdi75/NUMEX-Interpreter}
-            {\faGithub}
-        }}
-    \Item
-    Designed a simple interpreter for the NUMEX programming language using Racket as part of the Programming Languages course.
-
-    \BigGap
-    \BulletItem
-    \textbf{Planet vs Zombies Game Application},
-    \textit{\small{Java}}
-    \hfill
-    {\normalsize{
-            \href{https://github.com/aliyazdi75/Planet\_vs\_Zombies}
-            {\faGithub}
-        }}
-    \Item
-    Developed a 2D game similar to Plant vs Zombies using Java and object-oriented programming concepts as part of the Advanced Computer Programming course.
-
-    % \BigGap
-    % \BulletItem
-    % \textbf{Digital Watch Microcontroller},
-    % \textit{\small{C}}
-    % \hfill
-    % {\normalsize{
-    %         \href{https://github.com/aliyazdi75/Digital-Watch-with-LCD}
-    %         {\faGithub}
-    %     }}
-    % \Item
-    % Implemented a digital watch with LCD and alarm functionality using the ATMEGA16 microcontroller as part of the Microprocessor and Assembly Language course.
-
-    % \columnbreak
-
-    \BigGap
-    \BulletItem
-    \textbf{Finite State Machine Search Engine},
-    \textit{\small{Java}}
-    \hfill
-    {\normalsize{
-            \href{https://github.com/aliyazdi75/Finite-State-Machine}
-            {\faGithub}
-        }}
-    \Item
-    Designed and implemented different data structures (AVL-tree, balanced-TST, trie-tree, and hash) and performed searching operations using them as part of the Data Structures and Algorithms course.
-
-    % \BigGap
-    % \BulletItem
-    % \textbf{UDP to TCP Proxy},
-    % \textit{\small{Python}}
-    % \hfill
-    % {\normalsize{
-    %         \href{https://github.com/aliyazdi75/DNS-UDP-TCP-Proxy}
-    %         {\faGithub}
-    %     }}
-    % \Item
-    % Developed a Python proxy server that receives HTTP packets over UDP and forwards them using TCP, including a DNS server, as part of the Computer Networks course.
-
-    % \end{itemize}
-    % \end{multicols}
-
-    %%%%%%%%%%%%%%%%
-    %% PAGE BREAK %%
-    %%%%%%%%%%%%%%%%
-
-    \newpage
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%
-    %% TEACHING EXPERIENCE %%
-    %%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Teaching Experience}
-    {Teaching Experience}
-    {PDF:TeachingExperience}
-
-    \Entry
-    \textbf{Data Structures and Algorithms},
-    Amirkabir University of Technology,
-    \hfill
-    \textsl{\small{\DatestampYM{2017}{09}\,--\,\DatestampYM{2018}{03}}}
-
-    \Gap
-    \begin{Detail}
-        \BulletItem
-        Assisted in teaching the Data Structures and Algorithms course at Amirkabir University of Technology under the supervision of \href{https://aut.ac.ir/cv/2123/Mehdi-Dehghan-Takht-Fooladi?slc_lang=en&&cv=2123&mod=scv}
-        {Prof.~Mehdi~Dehghan}
-        \,\SubBulletSymbol\,
-        \href{mailto:dehghan@aut.ac.ir}
-        {dehghan@aut.ac.ir}
-        \SubBulletItem
-        Conducting weekly tutorial sessions to reinforce concepts and help students with problem-solving.
-        \SubBulletItem
-        Providing guidance and support to students during office hours and via email.
-        \SubBulletItem
-        Grading assignments and providing constructive feedback to students.
-    \end{Detail}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%
-    %% RESEARCH INTERESTS %%
-    %%%%%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Research Interests}
-    {Research Interests}
-    {PDF:ResearchInterests}
-
-    \BulletItem
-    Artificial Intelligence: I am interested in various aspects of artificial intelligence, such as natural language processing, computer vision, and intelligent systems. I am excited about the potential of AI to revolutionize industries and improve decision-making processes.
-
-    \Gap
-    \BulletItem
-    Machine Learning: I have a strong passion for machine learning algorithms and techniques. I enjoy exploring supervised and unsupervised learning, deep learning, and reinforcement learning. I am particularly interested in applying machine learning to solve real-world problems and extract meaningful insights from complex datasets.
-
-    \Gap
-    \BulletItem
-    Software Engineering: I am intrigued by the challenges and opportunities in software engineering. I am interested in software development methodologies, software testing and quality assurance, and software architecture design. I aim to contribute to the creation of robust, scalable, and maintainable software systems.
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%
-    %% RESEARCH EXPERIENCE %%
-    %%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \Section
-    {Research Experience}
-    {Research Experience}
-    {PDF:ResearchExperience}
-
-    \Entry
-    \textbf{Artificial Intelligence and Robotics Lab},
-    Amirkabir University of Technology,
-    \hfill
-    \textsl{\small{\DatestampYM{2019}{10}\,--\,\DatestampYM{2020}{10}}}
-
-    \Gap
-    \begin{Detail}
-        \BulletItem
-        Undergraduate Research Student
-        \SubBulletItem
-        Project:
-        Designing and Implementing Location Based Social Network Recommendation System
-        \SubBulletItem
-        Supervisor:
-        \href{https://aut.ac.ir/cv/2416/Mohammad-Rahmati?slc_lang=en&&cv=2416&mod=scv}
-        {Prof.~Mohammad~Rahmati}
-        \,\SubBulletSymbol\,
-        \href{mailto:rahmati@aut.ac.ir}
-        {rahmati@aut.ac.ir}
-        \SubBulletItem
-        Focus: Artificial Intelligence, Software Engineering, Data Analytics
-    \end{Detail}
-
-    %%%%%%%%%%%%%%%%
-    %% REFERENCES %%
-    %%%%%%%%%%%%%%%%
-
-    \Section
-    {References}
-    {References}
-    {PDF:References}
-
-    \BulletItem
-    \href{https://linkedin.com/in/leehack}
-    {\textbf{Jhinseok Lee}}
-    \begin{Detail}
-        \Item
-        Co-organizer at GDG-Montreal,
-        \href{mailto:jhin@gdgmontreal.com}
-        {jhin@gdgmontreal.com}
-    \end{Detail}
-    \Item
-    Jhin was instrumental in establishing the Flutter community in Montreal and organizing in-person events sponsored by Google to contribute to the Flutter open-source community.
-
-    \BigGap
-    \BulletItem
-    \href{https://linkedin.com/in/tayormi}
-    {\textbf{Ajiboye Temitope}}
-    \begin{Detail}
-        \Item
-        Colleague at Woopen,
-        \href{mailto:mrtayormi@outlook.com}
-        {mrtayormi@outlook.com}
-    \end{Detail}
-    \Item
-    I worked closely with Temi in the same team at Woopen, collaborating on maintaining and implementing new features in the mobile application.
-
-    \BigGap
-    \BulletItem
-    \href{https://linkedin.com/in/srasoulzadeh}
-    {\textbf{Shervin Rasoulzadeh}}
-    \begin{Detail}
-        \Item
-        Colleague at Tarafdari,
-        \href{mailto:shervin.r.1996@gmail.com}
-        {shervin.r.1996@gmail.com}
-    \end{Detail}
-    \Item
-    Shervin served as my mentor, and we collaborated in the same team at Tarafdari, working on the mobile application and the backend APIs.
-
-    %%%%%%%%%%%%%
-    %% HOBBIES %%
-    %%%%%%%%%%%%%
-
-    \Section
-    {HOBBIES}
-    {HOBBIES}
-    {PDF:Hobbies}
-
-    \BulletItem
-    Hiking and Travelling
-
-    \Gap
-    \BulletItem
-    Listening to Music and Playing a Persian Instrument called 3Tar
-
-    \Gap
-    \BulletItem
-    Playing Football and Volleyball
-
-        %%%%%%%%%%%%%
-        %% CV NOTE %%
-        %%%%%%%%%%%%%
-
-        {\UseNoteFont
-            \hfill
-            [\textit{\CVNote}]
-            \SubBulletSymbol\,
-            [Clone me on
-                    \href{https://github.com/aliyazdi75/Resume}
-                    {\faGithub}]}
-
-\end{Body}
+\begin{center}
+    \textbf{\Huge \CVAuthor} \\
+    \vspace{1mm}
+    \TitleDesciption \\
+    \small {\txtcolor\href{\Phone}{\textbf{\PhoneName}}} $\vert$ {\txtcolor\href{\MainEmail}{\textbf{\MainEmailName}}} $\vert$ {\txtcolor\href{\CVWebpage}{\textbf{\CVWebpageName}}}
+\end{center}
+
+%%%%%%%%%%%%%%%
+%% OBJECTIVE %%
+%%%%%%%%%%%%%%%
+
+\Section{Objective}
+
+Dedicated software engineer with a focus on Flutter, aiming a role that embraces innovation and growth while using my broad technical skills. Passionate about leveraging my skills in a dynamic development environment.
+
+%%%%%%%%%%%%%%%%
+%% EXPERIENCE %%
+%%%%%%%%%%%%%%%%
+
+\Section{Experience}
+
+\href{https://woopen.com}
+{\textbf{Senior Flutter Developer}}, Woopen, Montréal, Canada
+\hfill \DatestampYM{2021}{08}\,--\,\DatestampYM{2023}{07}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Led Flutter development for a real estate networking mobile application, achieving a 70\% bug reduction and a significant performance boost by upgrading to the latest version, optimizing code, and implementing null-safety and localization enhancements.
+    \item Streamlined development workflows and fostered team collaboration by integrating automated tools (Github Actions, Sentry, Jira, Slack, Lokalise) and partnering with external agile teams for feature development.
+\end{itemize}
+
+\BigGap
+\href{https://en.iranian.ac.ir}
+{\textbf{Software Engineer}}, Iranian University, Tehran, Iran
+\hfill \DatestampYM{2020}{04}\,--\,\DatestampYM{2021}{08}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Optimized student registration and exam processes, developed APIs for E-Learning Management System, enhancing server response times.
+\end{itemize}
+
+\BigGap
+\href{https://tarafdari.com}
+{\textbf{Mobile Application Developer}}, Tarafdari, Tehran, Iran
+\hfill \DatestampYM{2019}{01}\,--\,\DatestampYM{2020}{04}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Migrated most popular sports media network android application to flutter, integrating live scores and a unique TV sports streaming with live chat,driving significant user engagement and app downloads.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PROFESSIONAL PROJECTS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{Professional Projects}
+
+\href{https://toituresblp.ca}
+{\textbf{Report System Application}}, Les Toitures BLP, Canada
+\hfill \DatestampYM{2024}{01}\,--\,Present
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Developing a report system application from scratch with Firebase and Flutter for professionals.
+\end{itemize}
+
+\BigGap
+\href{https://alagarderie.ca}
+{\textbf{Daycare Application}}, À La Garderie, Canada
+\hfill \DatestampYM{2023}{11}\,--\,Present
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Maintaining and stabilizing mobile app and making web app using Node.js and Flutter for daycares.
+\end{itemize}
+
+\BigGap
+\href{https://github.com/aliyazdi75/flutter_chat}
+{\textbf{Chat Application}}, Mate Machine, Canada
+\hfill \DatestampYM{2020}{07}\,--\,\DatestampYM{2021}{06}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Overhauled app architecture for scalability, making a robust real-time P2P chat and video call.
+\end{itemize}
+
+\BigGap
+\href{https://gallery.yazdi.dev}
+{\textbf{Alumni Gallery Application}}, Amirkabir University, Iran
+\hfill \DatestampYM{2021}{01}\,--\,\DatestampYM{2021}{02}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Developed a responsive Flutter gallery web app with a microservice architecture and advanced navigation.
+\end{itemize}
+
+\BigGap
+\href{https://raw.githubusercontent.com/aliyazdi75/Resume/main/BScThesis-Abstract.pdf?token=GHSAT0AAAAAACNTPCQKF3DMPOJ3YIMG3IPUZO5MTGQ}
+{\textbf{Location-Based Recommendation System}}, Amirkabir University, Iran
+\hfill \DatestampYM{2020}{07}\,--\,\DatestampYM{2020}{10}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Developed a recommendation system integrating content-based and collaborative filtering.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% VOLUNTEER EXPERIENCE %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{Volunteer Experience}
+
+\href{https://gdg.community.dev/gdg-montreal}
+{\textbf{Google Developer Group Organizer}}, Montréal, Canada
+\hfill \DatestampYM{2023}{03}\,--\,Present
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Organizer and speaker for Flutter Montreal events, coordinating meetups, workshops, and conferences as part of the global Flutter meetup network, enhancing community engagement and knowledge sharing.
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+%% EDUCATION %%
+%%%%%%%%%%%%%%%
+
+\Section{Education}
+
+\href{https://aut.ac.ir/en}
+{\textbf{Bachelor of Engineering in Computer Engineering}}, \\
+Amirkabir University of Technology (Tehran Polytechnic), Tehran, Iran
+\hfill \DatestampYM{2015}{09}\,--\,\DatestampYM{2020}{09}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item Thesis: Designing and Implementing a Location-Based Social Network Recommendation System.
+\end{itemize}
+
+%%%%%%%%%%%%
+%% SKILLS %%
+%%%%%%%%%%%%
+
+\Section{Skills}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item  Programming Languages: Dart, Python, JavaScript, Java, C/C++, PHP, Assembly
+    \item  Technologies: Flutter, Firebase, Node.js, Django, Google Cloud, Android, NoSQL, PostgreSQL, MySQL
+    \item  Tools: CI/CD, Docker, Git, \LaTeX, WebRTC, Scikit-learn, Pandas, Bash Scripting
+    \item  Other: Jira, Sentry, Software Systems Engineering, Cross-Platform Application Development
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PROFESSIONAL ARTICLES %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{Professional Articles}
+
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item  \href{https://medium.com/flutter-community/lets-make-the-flutter-navigator-2-bc5953251c3e?source=friends_link&sk=e1ff30235ab93276b558c5b5ef1dd15f}
+          {\textbf{Implementation of Flutter Navigator 2}}: This guide highlights the implementation of Navigator 2.0 to seamlessly support both imperative and declarative navigation in web applications, enhancing user experience through efficient management of navigation scenarios.
+          \Gap
+    \item  \href{https://medium.com/flutter-community/the-software-engineering-approach-in-cross-platform-programming-with-flutter-part-1-efcdc8a8fc26?source=friends_link&sk=ceb60f56685ce66c7f9574595748f25b}
+          {\textbf{Applying Software Engineering Principles}}: A series of articles detailing how implementing software engineering methods in Flutter projects can significantly improve code quality and maintainability in cross-platform applications, drawing from my experiences to provide practical examples utilizing a microservice architecture
+\end{itemize}
+
+%%%%%%%%%%%%%%%
+%% LANGUAGES %%
+%%%%%%%%%%%%%%%
+
+\Section{Languages}
+
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item  English: Full professional proficiency
+    \item  French: Limited working proficiency (Intermediate level from Québec Government)
+    \item  Persian: Native proficiency
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PROFESSIONAL PROJECTS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section{Academic Projects}
+
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item  \href{https://github.com/aliyazdi75/Planet_vs_Zombies}
+          {\textbf{Planet vs Zombies Game}}: Developed a 2D game using Java and object-oriented programming concepts.
+          \Gap
+    \item  \href{https://github.com/aliyazdi75/NUMEX-Interpreter}
+          {\textbf{NUMEX Interpreter}}: Designed an interpreter using Racket as part of the Programming Languages course.
+          \Gap
+    \item  \href{https://github.com/aliyazdi75/Finite-State-Machine}
+          {\textbf{Finite State Machine}}: Implemented AVL, TST, trie, and hash data structures for an efficient data search.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%
+%% REFERENCES %%
+%%%%%%%%%%%%%%%%
+
+\Section{References}
+
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt]
+    \item  \href{https://linkedin.com/in/leehack}
+          {\textbf{Jhinseok Lee}}, Co-organizer at GDG-Montreal, \href{mailto:leehack@gmail.com}{leehack@gmail.com} \\
+          Collaborated with Jhin, my mentor and seasoned Full-stack developer at Unity, on projects and GDG-Montreal Flutter events, leveraging his leadership and technical expertise to enhance my skills.
+          \Gap
+    \item  \href{https://linkedin.com/in/tayormi}
+          {\textbf{Ajiboye Temitope}}, Colleague at Woopen, \href{mailto:mrtayormi@outlook.comm}{mrtayormi@outlook.com}
+\end{itemize}
 \end{document}
