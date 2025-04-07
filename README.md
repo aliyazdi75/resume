@@ -10,4 +10,3 @@ Make sure you have already installed Font-Awsome:
 Cheatsheet for icons: [Link](fontawesome5.pdf)
 
 ![My Resume](pic1.png "My Resume1")
-![My Resume](pic2.png "My Resume2")
