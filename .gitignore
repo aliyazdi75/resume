@@ -1,0 +1,10 @@
+# Miscellaneous
+.idea
+*.gz
+*.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.xdv
+.DS_Store
